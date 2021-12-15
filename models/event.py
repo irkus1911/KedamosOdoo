@@ -28,3 +28,4 @@ class Event(models.Model):
     place=fields.Many2one('kedamos.place')
     comment=fields.One2many('kedamos.comment', 'event')
     participants=fields.Many2many('kedamos.client')
+    eventRevisions=fields.One2many('kedamos.revise', 'event')
