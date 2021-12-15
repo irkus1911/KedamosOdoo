@@ -9,4 +9,4 @@ class Place(models.Model):
     address = fields.Char(required=True)
     price = fields.Float(digits=(6,2))
     dateRenewal = fields.Date()
-    event_ids = fields.One2Many('kedamos.event', 'place_id')
+    event = fields.One2many('kedamos.event', 'place')
