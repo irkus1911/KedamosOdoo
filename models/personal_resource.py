@@ -4,13 +4,13 @@
 
 class personal_resource(models.Model):
     _name='kedamos.personal_resource'
-    id_personalResource=odoo.fields.Integer()
+    
     dateExpired=odoo.fields.Date()
     dateHired=odoo.fields.Date()
     price=odoo.fields.Float()
     quantity=odoo.fields.Integer()
     personalResource_type=odoo.Fields.Selection([(1,'CAMARERO'),
-                                                 (2,'SEGURIDAD')
+                                                 (2,'SEGURIDAD'),
                                                  (3,'DJ'),
                                                  (4,'PAYASO'),
                                                  (5,'MAGO'),
@@ -23,4 +23,4 @@ class personal_resource(models.Model):
                                                  (12,'MUSICO'),
                                                  (13,'ACTOR')],string='camarero',copy='false',default=0)
                                                  
-    event_id=fields.Many2one('kedamos.event',ondelete='set null', string="Responsible", index=True)
+    event=fields.Many2one('kedamos.event',ondelete='set null', string="Event", index=True)
