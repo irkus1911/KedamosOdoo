@@ -2,7 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 class Client(models.Model):
     
@@ -14,4 +14,4 @@ class Client(models.Model):
     
     joinEvents = fields.Many2many('kedamos.event')
     myEvents = fields.One2many('kedamos.event', 'organizer')
-    
+    myComments = fields.One2many('kedamos.comment', 'user')
