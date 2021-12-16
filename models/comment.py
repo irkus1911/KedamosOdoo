@@ -2,6 +2,8 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
+from odoo import models, fields
+
 class Comment(models.Model):
     _name = 'kedamos.comment'
     
