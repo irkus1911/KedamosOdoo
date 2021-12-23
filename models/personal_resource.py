@@ -7,11 +7,11 @@ from odoo import models, fields
 class personal_resource(models.Model):
     _name='kedamos.personal_resource'
     
-    dateExpired=odoo.fields.Date()
-    dateHired=odoo.fields.Date()
-    price=odoo.fields.Float()
-    quantity=odoo.fields.Integer()
-    personalResource_type=odoo.Fields.Selection([(1,'CAMARERO'),
+    dateExpired=fields.Date()
+    dateHired=fields.Date()
+    price=fields.Float()
+    quantity=fields.Integer()
+    personalResource_type=fields.Selection([(1,'CAMARERO'),
                                                  (2,'SEGURIDAD'),
                                                  (3,'DJ'),
                                                  (4,'PAYASO'),
@@ -23,6 +23,7 @@ class personal_resource(models.Model):
                                                  (10,'COCTELERO'),
                                                  (11,'CANTANTE'),
                                                  (12,'MUSICO'),
-                                                 (13,'ACTOR')],string='camarero',copy='false',default=0)
+                                                 (13,'ACTOR')])
                                                  
+    
     event=fields.Many2one('kedamos.event',ondelete='set null', string="Event", index=True)
