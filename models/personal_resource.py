@@ -25,4 +25,5 @@ class personal_resource(models.Model):
                                                  (12,'MUSICO'),
                                                  (13,'ACTOR')])
                                                  
+    
     event=fields.Many2one('kedamos.event',ondelete='set null', string="Event", index=True)
