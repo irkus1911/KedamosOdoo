@@ -8,5 +8,6 @@ class Revise(models.Model):
     _name = 'kedamos.revise'
 
     reviseDate = fields.Date(required=True)
+    
     event = fields.Many2one('kedamos.event', ondelete='set null', string='Event', index=True)
-    user = fields.Many2one('kedamos.eventManager', ondelete='set null', string='User', index=True)
+    user = fields.Many2one('kedamos.event_manager', ondelete='set null', string='User', index=True)

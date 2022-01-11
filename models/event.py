@@ -15,15 +15,15 @@ class Event(models.Model):
     price=fields.Float()
     isRevised=fields.Boolean(required=True)
     title=fields.Char(required=True)
-    event_category=fields.Selection([(1, 'OCIO'),
-                                     (2, 'DEPORTES'),
-                                     (3, 'FIESTA'),   
-                                     (4, 'CULTURA'),
-                                     (5, 'EXCURSIONES'),
-                                     (6, 'VIDEOJUEGOS'),
-                                     (7, 'JUEGOS_DE_MESA'),
-                                     (8, 'MUSICA'),
-                                     (9, 'OTROS')])
+    event_category=fields.Selection([('1', 'OCIO'),
+                                     ('2', 'DEPORTES'),
+                                     ('3', 'FIESTA'),   
+                                     ('4', 'CULTURA'),
+                                     ('5', 'EXCURSIONES'),
+                                     ('6', 'VIDEOJUEGOS'),
+                                     ('7', 'JUEGOS_DE_MESA'),
+                                     ('8', 'MUSICA'),
+                                     ('9', 'OTROS')])
                                      
     personal=fields.One2many('kedamos.personal_resource', 'event')
     organizer=fields.Many2one('kedamos.client')

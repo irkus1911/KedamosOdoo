@@ -5,11 +5,10 @@
 from odoo import models, fields
 
 class EventManager(models.Model):
-    
     _name = 'kedamos.event_manager'
     _inherit = 'res.users'
         
-    managerCategory = fields.Selection(('ocio','OCIO'),
+    managerCategory = fields.Selection([('ocio','OCIO'),
                                        ('deportes','DEPORTES'),
                                        ('fiesta','FIESTA'),
                                        ('cultura','CULTURA'),
@@ -17,6 +16,6 @@ class EventManager(models.Model):
                                        ('videojuegos','VIDEOJUEGOS'),
                                        ('juegos_de_mesa','JUEGOS_DE_MESA'),
                                        ('musica','MUSICA'),
-                                       ('otros','OTROS'))
+                                       ('otros','OTROS')])
                                        
     myRevisions = fields.One2many('kedamos.revise', 'user')
