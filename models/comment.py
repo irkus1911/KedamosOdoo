@@ -8,7 +8,7 @@ class Comment(models.Model):
     _name = 'kedamos.comment'
     
     description = fields.Char(required=True)
-    date = fields.DateTime(required=True)
+    date = fields.Date(required=True)
     mark = fields.Selection([(1, 'ONE'),
                             (2, 'TWO'),
                             (3, 'THREE'),
