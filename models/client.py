@@ -5,7 +5,6 @@
 from odoo import models, fields
 
 class Client(models.Model):
-    
     _name = 'kedamos.client'
     _inherit = 'res.users'
 
