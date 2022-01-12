@@ -1,59 +1,43 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="kedamos.list">
-      <field name="name">kedamos list</field>
-      <field name="model">kedamos.kedamos</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
-    -->
+    <data>
 
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="kedamos.action_window">
-      <field name="name">kedamos window</field>
-      <field name="res_model">kedamos.kedamos</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="kedamos.action_window_client">
+            <field name="name">kedamos window</field>
+            <field name="res_model">kedamos.client</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="kedamos.action_window_event_manager">
+            <field name="name">kedamos window</field>
+            <field name="res_model">kedamos.event_manager</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="kedamos.action_window_event">
+            <field name="name">kedamos window</field>
+            <field name="res_model">kedamos.event</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="kedamos.action_window_place">
+            <field name="name">kedamos window</field>
+            <field name="res_model">kedamos.place</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="kedamos.action_window_personal_resource">
+            <field name="name">kedamos window</field>
+            <field name="res_model">kedamos.personal_resource</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="kedamos.action_server">
-      <field name="name">kedamos server</field>
-      <field name="model_id" ref="model_kedamos_kedamos"/>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
-
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="kedamos" id="kedamos.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="kedamos.menu_1" parent="kedamos.menu_root"/>
-    <menuitem name="Menu 2" id="kedamos.menu_2" parent="kedamos.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="kedamos.menu_1_list" parent="kedamos.menu_1"
-              action="kedamos.action_window"/>
-    <menuitem name="Server to list" id="kedamos" parent="kedamos.menu_2"
-              action="kedamos.action_server"/>
-    -->
-  </data>
+        <!-- Top menu item -->
+        <menuitem name="Kedamos" id="kedamos.menu_root"/>
+    
+        <!-- menu actions -->
+    
+        <menuitem name="Clients" id="kedamos.menu_1" parent="kedamos.menu_root" action="kedamos.action_window_client"/>
+        <menuitem name="Event Managers" id="kedamos.menu_2" parent="kedamos.menu_root" action="kedamos.action_window_event_manager"/>
+        <menuitem name="Events" id="kedamos.menu_3" parent="kedamos.menu_root" action="kedamos.action_window_event"/>
+        <menuitem name="Places" id="kedamos.menu_4" parent="kedamos.menu_root" action="kedamos.action_window_place"/>
+        <menuitem name="Personal Resources" id="kedamos.menu_5" parent="kedamos.menu_root" action="kedamos.action_window_personal_resource"/>
+    
+    </data>
 </odoo>
