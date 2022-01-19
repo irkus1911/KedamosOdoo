@@ -18,7 +18,7 @@
             <field name="view_mode">tree,form</field>
         </record>
         <record model="ir.actions.act_window" id="kedamos.action_window_place">
-            <field name="name">kedamos window</field>
+            <field name="name">Places</field>
             <field name="res_model">kedamos.place</field>
             <field name="view_mode">tree,form</field>
         </record>
