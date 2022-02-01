@@ -5,11 +5,10 @@
 from odoo import models, fields
 
 class Client(models.Model):
-    _name = 'kedamos.client'
     _inherit = 'res.users'
 
-    accountNumber = fields.Integer()
-    isPremium = fields.Boolean()
+    accountNumber = fields.Integer(required=True)
+    isPremium = fields.Boolean(required=True)
     
     joinEvents = fields.Many2many('kedamos.event')
     myEvents = fields.One2many('kedamos.event', 'organizer')
