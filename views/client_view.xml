@@ -4,7 +4,7 @@
         <!-- Esto muestra la lista de los clientes -->
         <record model="ir.ui.view" id="client_list">
             <field name="name">client.list</field>
-            <field name="model">kedamos.client</field>
+            <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_tree"/>
             <field name="arch" type="xml">
                 <tree>
@@ -16,17 +16,12 @@
         <!-- Esto es el formulario para el cliente -->
         <record model="ir.ui.view" id="client_form">
             <field name="name">client.form</field>
-            <field name="model">kedamos.client</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_simple_form"/>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <group string="Personal Info">
-                            <group>
-                                <field name="name"/>
-                                <field name="login"/>
-                                <field name="email"/>
-                                <field name="password"/>
-                            </group>
+                        <group string="Client Additional Info">
                             <group>
                                 <field name="accountNumber"/>
                                 <field name="isPremium"/>
