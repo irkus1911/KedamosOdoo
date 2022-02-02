@@ -15,5 +15,5 @@ class Comment(models.Model):
                             ('4', 'FOUR'),
                             ('5', 'FIVE')])
                             
-    user = fields.Many2one('kedamos.client', ondelete='set null', string='User', index=True)
+    user = fields.Many2one('res.users', ondelete='set null', string='User', index=True)
     event = fields.Many2one('kedamos.event', ondelete='set null', string='Event', index=True)

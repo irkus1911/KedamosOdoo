@@ -5,6 +5,7 @@
 from odoo import models, fields
 
 class EventManager(models.Model):
+    _name = 'res.users'
     _inherit = 'res.users'
         
     managerCategory = fields.Selection([('ocio','OCIO'),
