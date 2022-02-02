@@ -2,7 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import models, fields
+from odoo import models, fields, api, exceptions
 
 class Place(models.Model):
     _name = 'kedamos.place'
@@ -13,3 +13,20 @@ class Place(models.Model):
     dateRenewal = fields.Date()
     
     event = fields.One2many('kedamos.event', 'place')
+    
+    @api.onchange('price')
+    def _verify_price_value(self):
+        if self.price < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect price value",
+                    'message': "The price value cannot be negative",
+                },
+            }
+    
+    @api.constrains('price')
+    def _verify_price_value_save(self):
+        if self.price < 0:
+            raise exceptions.ValidationError("The price value cannot be negative")
+           
+            

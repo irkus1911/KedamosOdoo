@@ -54,6 +54,12 @@ and open the template in the editor.
                 <search>
                     <field name="name"/>
                     <field name="address"/>
+                    <field name="event">
+                        <field name="event_category"/>
+                    </field>
+                    
+                    <filter string="Name" name="name" context="{'group_by':'name'}"/>
+                    <!--<filter string="Event Category" name="event" context="{'group_by':'event_category'}"/>-->
                 </search>
             </field>
         </record>
