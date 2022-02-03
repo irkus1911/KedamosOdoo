@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="event_custom_report"
+        string="Event Report"
+        model="kedamos.event"
+        report_type="qweb-html"
+        name="kedamos.event_report"/>
+
+    <template id="event_report">
+        <t t-call="report.html_container"> 
+            <t t-foreach="docs" t-as="o">
+                <t t-call="report.external_layout">
+                    <div class="page"> 
+                        <br/><br/><br/><br/><br/>                  
+                        <h3 style="color:red">Event:</h3>
+                        <ul>
+                            <li> 
+                                <b style="color:blue">Title</b> 
+                                <span t-field="o.title" style="color:blue"/>
+                            </li>
+                            <li>
+                                <b style="color:blue">Description</b> 
+                                <span t-field="o.description" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Date</b> 
+                                <span t-field="o.date" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Min Participants</b> 
+                                <span t-field="o.minParticipants" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Max Participants</b> 
+                                <span t-field="o.maxParticipants" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Actual Participants</b> 
+                                <span t-field="o.actualParticipants" style="color:blue"/>
+                            </li>
+                        </ul>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>	
+</odoo> 
