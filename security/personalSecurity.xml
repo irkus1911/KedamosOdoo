@@ -1,0 +1,10 @@
+<odoo>
+     <data>
+        <record id="all_control" model="res.groups">
+            <field name="name">Kedamos control completo</field>
+        </record>
+        <record id="read" model="res.groups">
+            <field name="name">Kedamos lectura</field>
+        </record>
+     </data>
+ </odoo>
