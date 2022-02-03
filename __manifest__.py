@@ -3,8 +3,7 @@
     'name': "kedamos",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+       Maneja todos los eventos""",
 
     'description': """
         Long description of module's purpose
@@ -27,6 +26,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/personal_resource_view.xml',
+       
     ],
     # only loaded in demonstration mode
     'demo': [
