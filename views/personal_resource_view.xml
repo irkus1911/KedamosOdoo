@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="personal_resource_view"> 
+            <field name="name">view.PesonalResource.form</field>
+            <field name="model">kedamos.personal_resource</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <form>
+                    
+                    <group col="2">
+                        <group colspan="1" col="2">
+                            <field name="dateHired"/>
+                            <field name="dateExpired"/> 
+                            <field name="price"/>
+                        </group>
+                        <group colspan="1" col="2">                     
+                            <field name="quantity"/>
+                            <field name="personalResource_type"/>
+                            <field name="event">
+                                <tree>
+                                    
+                                        <field name="title" type="Char"/>
+                                  
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                 
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="personal_resource_view_list"> 
+            <field name="name">view.PesonalResource.list</field>
+            <field name="model">kedamos.personal_resource</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="personalResource_type"/>                        
+                    <field name="price"/>        
+                    <field name="quantity"/>
+                    <field name="event">
+                        <tree>
+                            <field name="title"/>
+                        </tree>
+                        
+                    </field>      
+                </tree>
+            </field>
+        </record> 
+        
+        <record model="ir.ui.view" id="personal_resource_view_list_search"> 
+            <field name="name">view.PesonalResource.list.cearch</field>
+            <field name="model">kedamos.personal_resource</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="personalResource_type"/>
+                    <field name="event">
+                        <field name="title"/>
+                    </field>
+                    <filter string="Type" name="type" context="{'group_by': 'personalResource_type'}"></filter>
+                    <filter string="Date Hired" name="type" context="{'group_by': 'dateHired'}"></filter>
+                    <filter string="Quantity" name="type" context="{'group_by': 'quantity'}"></filter>
+                    <filter domain="[('personalResource_type','ilike','1')]" name="CAMARERO" string="Filtro CAMARERO"></filter>
+                    <filter domain="[('personalResource_type','ilike','2')]" name="SEGURIDAD" string="Filtro SEGURIDAD"></filter>
+                    <filter domain="[('personalResource_type','ilike','3')]" name="DJ" string="Filtro DJ"></filter>
+                    <filter domain="[('personalResource_type','ilike','4')]" name="PAYASO" string="Filtro PAYASO"></filter>
+                    <filter domain="[('personalResource_type','ilike','5')]" name="MAGO" string="Filtro MAGO"></filter>
+                    <filter domain="[('personalResource_type','ilike','6')]" name="HUMOSRISTA" string="Filtro HUMOSRISTA"></filter>
+                    <filter domain="[('personalResource_type','ilike','7')]" name="COCINERO" string="Filtro COCINERO"></filter>
+                    <filter domain="[('personalResource_type','ilike','8')]" name="GUIA" string="Filtro GUIA"></filter>
+                    <filter domain="[('personalResource_type','ilike','9')]" name="ARBITRO" string="Filtro ARBITRO"></filter>
+                    <filter domain="[('personalResource_type','ilike','10')]" name="COCTELERO" string="Filtro COCTELERO"></filter>
+                    <filter domain="[('personalResource_type','ilike','11')]" name="CANTANTE" string="Filtro CANTANTE"></filter>
+                    <filter domain="[('personalResource_type','ilike','12')]" name="MUSICO" string="Filtro MUSICO"></filter>
+                    <filter domain="[('personalResource_type','ilike','13')]" name="ACTOR" string="Filtro ACTOR"></filter>
+
+
+                </search>
+            </field>
+        </record> 
+           
+    </data>
+</odoo>

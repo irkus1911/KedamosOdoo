@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="place_form_view">
+            <field name="name">place.form</field>
+            <field name="model">kedamos.place</field>
+            <field name="arch" type="xml">
+                <form string="Place Form">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="address"/>
+                        </group>
+                        <group>
+                            <field name="price"/>
+                            <field name="dateRenewal" string="Renewal Date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="event">
+                            <tree>
+                                <field name="title"/>
+                                <field name="date"/>
+                                <field name="actualParticipants" string="Ac. Participants"/>
+                                <field name="event_category"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="place_list_view">
+            <field name="name">place.list</field>
+            <field name="model">kedamos.place</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="address"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="place_search_view">
+            <field name="name">place.search</field>
+            <field name="model">kedamos.place</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="event">
+                        <field name="event_category"/>
+                    </field>
+                    
+                    <filter string="Name" name="name" context="{'group_by':'name'}"/>
+                    <!--<filter string="Event Category" name="event" context="{'group_by':'event_category'}"/>-->
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
