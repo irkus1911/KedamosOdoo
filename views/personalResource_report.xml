@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<report
-	id="custom_report"
-	string="PersonalResource Report"
-	model="kedamos.personal_resource"
-	report_type="qweb-html"
-	name="kedamos.personalResource_report"/>
+    <report
+        id="custom_report"
+        string="PersonalResource Report"
+        model="kedamos.personal_resource"
+        report_type="qweb-html"
+        name="kedamos.personalResource_report"/>
 	
-	<template id="personalResource_report">
-        <t t-call="report.html_container"> 
-            <t t-foreach="docs" t-as="o">
+    <!--Template definition-->    
+    <template id="personalResource_report">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
                 <t t-call="report.external_layout">
-                    <div class="page">
-                        <h1><span t-esc="o.name"/></h1>
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th>TYPE</th>
-                                    <th>DATE HIRED</th>
-                                    <th>DATE EXPIRED</th>
-                                    <th>PRICE</th>
-                                    <th>QUANTITY</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-				<t t-foreach="docs.personal_resource" t-as="personal">
-				    <tr> 
-					<td><span t-field="personal_resource.personalResource_type"/></td>
-                                        <td><span t-field="personal_resource.dateHired"/></td>
-					<td><span t-field="personal_resource.dateExpired"/></td>
-					<td><span t-field="personal_resource.price"/></td>
-                                    </tr>
-                                </t>								
-                            </tbody>
-                        </table>
+                    <div class="page">                  
+                        <h3 style="color:red">Personal:</h3>
+                        <ul>
+                            <t t-foreach="doc.event" t-as="event">
+                                <li> 
+                                    <b style="color:blue">Trabajador:</b> 
+                                    <span t-field="event.title" style="color:blue"/>
+                                </li>
+                            </t>
+                            <li> 
+                                <b style="color:blue">Expired date:</b> 
+                                <span t-field="doc.personalResource_type" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Expired date:</b> 
+                                <span t-field="doc.quantity" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Expired date:</b> 
+                                <span t-field="doc.price" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Expired date:</b> 
+                                <span t-field="doc.dateExpired" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Hired date:</b> 
+                                <span t-field="doc.dateHired" style="color:blue"/>
+                            </li>
+                            
+                            
+                             
+                        </ul>
                     </div>
                 </t>
             </t>
         </t>
-    </template>	
+    </template>
 </odoo>
