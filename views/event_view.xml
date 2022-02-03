@@ -26,25 +26,35 @@
                             </group>
                         </group>
                         <group>
-                        <field name="organizer"/>
-                        <field name="place"/>
+                            <field name="organizer"/>
+                            <field name="place"/>
                         </group>
                     </group>
                     <notebook>
                         <page string="Personal">
-                        <field name="personal">
-                            <tree>
-                                <field name="personalResource_type" string="Personal"/>
-                                <field name="quantity"/>
-                                <field name="price"/>
-                            </tree>
-                        </field>
+                            <field name="personal">
+                                <tree>
+                                    <field name="personalResource_type" string="Personal"/>
+                                    <field name="quantity"/>
+                                    <field name="price"/>
+                                </tree>
+                            </field>
                         </page>
                         <page string="Comments">
-                        <field name="comment"/>
+                            <field name="comment">
+                                <tree>
+                                    <field name="mark"/>
+                                    <field name="description"/>      
+                                    <field name="date"/>                     
+                                </tree>
+                            </field>
                         </page>
                         <page string="Revisions">
-                        <field name="eventRevisions" string="Event Revisions"/>
+                            <field name="eventRevisions" string="Event Revisions">
+                                <tree>
+                               <field name="reviseDate" string="Revise Date"/> 
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </form>          
@@ -65,13 +75,16 @@
             </field>
         </record>
         
-                <record model="ir.ui.view" id="event_search_view">
+        <record model="ir.ui.view" id="event_search_view">
             <field name="name">event.search</field>
             <field name="model">kedamos.event</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="title"/>
                     <field name="event_category"/>
+                    
+                    <filter string="Title" name="title" context="{'group_by':'title'}"/>
+                    <filter string="Event Category" name="event_category" context="{'group_by':'event_category'}"/>
                 </search> 
             </field>
         </record>
