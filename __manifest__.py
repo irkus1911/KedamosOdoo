@@ -28,8 +28,8 @@
         'views/client_view.xml',
         'views/templates.xml',
         'views/place_view.xml',
-        'views/place_report.xml',
         'views/personal_resource_view.xml',
+        'views/personalResource_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
