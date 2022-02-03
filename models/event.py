@@ -26,10 +26,10 @@ class Event(models.Model):
                                      ('9', 'OTROS')])
                                      
     personal=fields.One2many('kedamos.personal_resource', 'event')
-    organizer=fields.Many2one('kedamos.client')
+    organizer=fields.Many2one('res.users')
     place=fields.Many2one('kedamos.place')
     comment=fields.One2many('kedamos.comment', 'event')
-    participants=fields.Many2many('kedamos.client')
+    participants=fields.Many2many('res.users')
     eventRevisions=fields.One2many('kedamos.revise', 'event')
     
     @api.constrains('price')
@@ -42,3 +42,4 @@ class Event(models.Model):
         for p in self:
             if p.maxParticipants<p.minParticipants:
                 raise exceptions.ValidationError("minParticipants must be lower than maxParticipants")
+

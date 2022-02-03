@@ -25,11 +25,11 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
+        'views/client_view.xml',
         'views/templates.xml',
         'views/place_view.xml',
         'views/place_report.xml',
         'views/personal_resource_view.xml',
-       
     ],
     # only loaded in demonstration mode
     'demo': [

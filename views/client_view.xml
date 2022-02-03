@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Esto muestra la lista de los clientes -->
+        <record model="ir.ui.view" id="client_list">
+            <field name="name">client.list</field>
+            <field name="model">res.users</field>
+            <!--<field name="inherit_id" ref="base.view_users_tree"/>-->
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+      
+        <!-- Esto es el formulario para el cliente -->
+        <record model="ir.ui.view" id="client_form">
+            <field name="name">client.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_simple_form"/>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Client Additional Info">
+                            <group>
+                                <field name="accountNumber"/>
+                                <field name="isPremium"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="My Events">
+                                <field name="myEvents">
+                                    <tree>
+                                        <field name="title"/>
+                                        <field name="event_category"/>
+                                        <field name="minParticipants" string="Min. Participants"/>
+                                        <field name="maxParticipants" string="Max. Participants"/>
+                                        <field name="actualParticipants" string="Actual Participants"/>
+                                    </tree> 
+                                </field>    
+                            </page>
+                            <page string="My Comments">
+                                <field name="myComments">
+                                    <tree>
+                                        <field name="mark"/>
+                                        <field name="description"/>
+                                        <field name="date"/>
+                                    </tree>
+                                </field>    
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!--Esto añade una busqueda parametrizada -->
+        <record model="ir.ui.view" id="client_search">
+            <field name="name">client.search</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="login"/>
+                    <filter string="Email" name="email" context="{'group_by':'email'}"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
