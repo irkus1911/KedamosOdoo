@@ -27,6 +27,5 @@ class Place(models.Model):
     @api.constrains('price')
     def _verify_price_value_save(self):
         if self.price < 0:
-            raise exceptions.ValidationError("The price value cannot be negative")
-           
+            raise exceptions.ValidationError("The price value cannot be negative")           
             
