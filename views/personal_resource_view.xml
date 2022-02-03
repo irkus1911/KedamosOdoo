@@ -18,8 +18,11 @@
                             <field name="quantity"/>
                             <field name="personalResource_type"/>
                             <field name="event">
-                                
-                                <field name="title"/>
+                                <tree>
+                                    
+                                        <field name="title" type="Char"/>
+                                  
+                                </tree>
                             </field>
                         </group>
                     </group>
@@ -38,8 +41,9 @@
                     <field name="price"/>        
                     <field name="quantity"/>
                     <field name="event">
-                  
-                        <field name="title"/>
+                        <tree>
+                            <field name="title"/>
+                        </tree>
                         
                     </field>      
                 </tree>
@@ -72,6 +76,8 @@
                     <filter domain="[('personalResource_type','ilike','11')]" name="CANTANTE" string="Filtro CANTANTE"></filter>
                     <filter domain="[('personalResource_type','ilike','12')]" name="MUSICO" string="Filtro MUSICO"></filter>
                     <filter domain="[('personalResource_type','ilike','13')]" name="ACTOR" string="Filtro ACTOR"></filter>
+
+
                 </search>
             </field>
         </record> 
