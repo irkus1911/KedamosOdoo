@@ -2,7 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import models, fields
+from odoo import models, fields, api,exceptions
 
 class Event(models.Model):
     _name= 'kedamos.event'
@@ -31,3 +31,14 @@ class Event(models.Model):
     comment=fields.One2many('kedamos.comment', 'event')
     participants=fields.Many2many('kedamos.client')
     eventRevisions=fields.One2many('kedamos.revise', 'event')
+    
+    @api.constrains('price')
+    def _verify_valid_price(self):
+        if self.price < 0:
+            raise exceptions.ValidationError("The price must be positive")
+    
+    @api.constrains('minParticipants', 'maxParticipants')
+    def _verify_valid_participants(self):
+        for p in self:
+            if p.maxParticipants<p.minParticipants:
+                raise exceptions.ValidationError("minParticipants must be lower than maxParticipants")
