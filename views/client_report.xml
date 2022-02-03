@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="client_custom_report"
+        string="Client Report"
+        model="res.users"
+        report_type="qweb-html"
+        name="kedamos.client_report"/>
+
+    <template id="client_report">
+        <t t-call="report.html_container"> 
+            <t t-foreach="docs" t-as="o">
+                <t t-call="report.external_layout">
+                    <div class="page"> 
+                        <br/><br/><br/><br/><br/>                  
+                        <h3 style="color:red">Client:</h3>
+                        <ul>
+                            <li> 
+                                <b style="color:blue">Name</b> 
+                                <span t-field="o.name" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Login</b> 
+                                <span t-field="o.login" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Email</b> 
+                                <span t-field="o.email" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Account number</b> 
+                                <span t-field="o.accountNumber" style="color:blue"/>
+                            </li>
+                            <li> 
+                                <b style="color:blue">Premium</b> 
+                                <span t-field="o.isPremium" style="color:blue"/>
+                            </li>
+                        </ul>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>	
+</odoo> 

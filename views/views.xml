@@ -2,22 +2,22 @@
   <data>
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="kedamos.action_window_client">
-      <field name="name">kedamos window</field>
+      <field name="name">kedamos client</field>
       <field name="res_model">res.users</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="kedamos.action_window_event">
-      <field name="name">Events</field>
+      <field name="name">kedamos event</field>
       <field name="res_model">kedamos.event</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="kedamos.action_window_place">
-      <field name="name">kedamos window</field>
+      <field name="name">kedamos place</field>
       <field name="res_model">kedamos.place</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="kedamos.action_window_personal_resource">
-      <field name="name">kedamos window</field>
+      <field name="name">kedamos personal resource</field>
       <field name="res_model">kedamos.personal_resource</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -27,7 +27,6 @@
     
     <!-- menu actions -->
     <menuitem name="Clients" id="kedamos.menu_1" parent="kedamos.menu_root" action="kedamos.action_window_client"/>
-    <!--<menuitem name="Event Managers" id="kedamos.menu_2" parent="kedamos.menu_root" action="kedamos.action_window_event_manager"/>-->
     <menuitem name="Events" id="kedamos.menu_3" parent="kedamos.menu_root" action="kedamos.action_window_event"/>
     <menuitem name="Places" id="kedamos.menu_4" parent="kedamos.menu_root" action="kedamos.action_window_place"/>
     <menuitem name="Personal Resources" id="kedamos.menu_5" parent="kedamos.menu_root" action="kedamos.action_window_personal_resource"/>

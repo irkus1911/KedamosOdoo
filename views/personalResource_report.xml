@@ -12,7 +12,8 @@
         <t t-call="report.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t t-call="report.external_layout">
-                    <div class="page">                  
+                    <div class="page">   
+                        <br/><br/><br/><br/><br/>               
                         <h3 style="color:red">Personal:</h3>
                         <ul>
                             <t t-foreach="doc.event" t-as="event">

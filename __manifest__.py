@@ -3,14 +3,16 @@
     'name': "kedamos",
 
     'summary': """
-       Maneja todos los eventos""",
-
-    'description': """
-        Long description of module's purpose
+       Module to manage all kinds of events
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'description': """
+        This module creates all kinds of events so that each client can manage 
+        it. In addition, to be able to join the events created
+    """,
+
+    'author': "Kedamos Company",
+    'website': "http://www.kedamos.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/10.0/odoo/addons/base/module/module_data.xml
@@ -31,6 +33,9 @@
         'views/place_view.xml',
         'views/personal_resource_view.xml',
         'views/personalResource_report.xml',
+        'views/event_view.xml',
+        'views/client_report.xml',
+        'views/event_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
